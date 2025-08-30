@@ -1,6 +1,6 @@
 {
-  "name": "anki-card",
-  "version": "1.1.0",
+  "name": "anki-card-cli",
+  "version": "1.0.0",
   "main": "index.js",
   "bin": {
     "anki-card": "index.js"
@@ -14,12 +14,13 @@
     "flashcards",
     "generator"
   ],
-  "description": "CSVから暗記カードのPDFを生成支援するアプリケーション。",
-  "homepage": "https://github.com/qq542vev/anki-card",
+  "description": "CLI環境でCSVから暗記カードのPDFを生成支援するアプリケーション。",
+  "homepage": "https://github.com/qq542vev/anki-card-cli",
   "bug": {
-    "url": "https://github.com/qq542vev/anki-card/issues"
+    "url": "https://github.com/qq542vev/anki-card-cli/issues"
   },
   "dependencies": {
+    "anki-card": "^1.1.0",
     "commander": "^14.0.0",
     "convert-length": "^1.0.1",
     "open": "^10.2.0",
@@ -29,16 +30,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.31.0",
-    "browserify": "^17.0.1",
-    "clean-css-cli": "^5.6.3",
-    "eslint": "^9.31.0",
-    "eslint-plugin-jsdoc": "^50.8.0",
-    "html-inline": "^1.2.0",
-    "html-minifier": "^4.0.0",
-    "jquery": "^3.7.1",
-    "normalize.css": "^8.0.1",
-    "papaparse": "^5.5.3",
-    "stylelint": "^16.21.1",
-    "stylelint-config-standard": "^38.0.0"
+    "eslint-plugin-jsdoc": "^50.8.0"
   }
 }
