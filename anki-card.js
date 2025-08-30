@@ -4,14 +4,14 @@
  * @file CSVから暗記カード用のPDFを生成するプログラム。
  * @module anki-card
  * @author {@link https://purl.org/meta/me/|qq542vev}
- * @version 1.0.1
+ * @version 1.0.2
  * @copyright Copyright (C) 2025-2025 qq542vev. All rights reserved.
  * @license AGPL-3.0-only
  * @see {@link https://github.com/qq542vev/anki-card|Project homepage}
  * @see {@link https://github.com/qq542vev/anki-card/issues|Bug report}
  * @dcterms:identifier cdec8c21-864a-42e1-b2be-f4b2c25e93a0
  * @dcterms:created 2025-08-10
- * @dcterms:modified 2025-08-29
+ * @dcterms:modified 2025-08-30
  * @dcterms:conformsTo https://262.ecma-international.org/
  */
 
@@ -296,7 +296,7 @@ function cmd() {
 					return pathToFileURL(arg).toString() + '#';
 				}
 			})
-			.default(pathToFileURL(path.join(__dirname, 'index.html')) + '#')
+			.default(pathToFileURL(require.resolve("anki-card/index.html")) + '#')
 		)
 		.option('--html', 'カード生成時のHTMLは有効。')
 		.option('--no-html', 'カード生成時のHTMLは無効。')
