@@ -363,7 +363,7 @@ function cmd() {
 		.option('-o, --output <output>', '出力ファイル名。', '-')
 		.optionsGroup('動作モードオプション')
 		.helpOption('-h, --help', 'ヘルプメッセージを表示して終了する。')
-		.version('1.0.0', '-V, --version', 'バージョン番号を表示して終了する。')
+		.version('1.0.2', '-V, --version', 'バージョン番号を表示して終了する。')
 		.exitOverride((err) => {
 			if(0 < err.exitCode) {
 				process.exit(Exit.USAGE);
