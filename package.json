@@ -19,6 +19,11 @@
   "bug": {
     "url": "https://github.com/qq542vev/anki-card-cli/issues"
   },
+  "files": [
+    "LICENSE.txt",
+    "README.md",
+    "index.js"
+  ],
   "dependencies": {
     "anki-card": "^1.1.0",
     "commander": "^14.0.0",
