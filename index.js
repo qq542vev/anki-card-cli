@@ -4,14 +4,14 @@
  * @file CSVから暗記カード用のPDFを生成するプログラム。
  * @module anki-card
  * @author {@link https://purl.org/meta/me/|qq542vev}
- * @version 1.0.2
+ * @version 1.0.3
  * @copyright Copyright (C) 2025-2025 qq542vev. All rights reserved.
  * @license AGPL-3.0-only
  * @see {@link https://github.com/qq542vev/anki-card|Project homepage}
  * @see {@link https://github.com/qq542vev/anki-card/issues|Bug report}
  * @dcterms:identifier cdec8c21-864a-42e1-b2be-f4b2c25e93a0
  * @dcterms:created 2025-08-10
- * @dcterms:modified 2025-08-30
+ * @dcterms:modified 2025-09-04
  * @dcterms:conformsTo https://262.ecma-international.org/
  */
 
@@ -278,7 +278,7 @@ function cmd() {
 			.default({ row: 6, col: 4 }, '6,4')
 		)
 		.addOption(
-			new Option('-r, --rev <rev>', '裏面ページの逆順方向。')
+			new Option('-r, --rev <rev>', '裏面ページの反転方向。')
 			.choices(['horizontal', 'vertical', 'both', 'none'])
 			.default('horizontal')
 		)
