@@ -6,9 +6,9 @@ Metadata:
 
 	id - 883bde28-39ee-41e1-a590-856098045489
 	author - <qq542vev at https://purl.org/meta/me/>
-	version - 0.1.0
+	version - 0.1.1
 	created - 2020-09-04
-	modified - 2025-09-04
+	modified - 2025-09-07
 	copyright - Copyright (C) 2025-2025 qq542vev. Some rights reserved.
 	license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
 
@@ -27,8 +27,8 @@ CSVから暗記カード用のHTML / PDFを生成するNode.js CLIツールで�
 このツールは次の機能を提供します。
 
  * PDF / HTMLを生成する。
- * 入力対応した暗記カード生成器のURL文字列を出力する。
-   * そのURLをブラウザーで開く。
+ * 入力対応した暗記カード生成器のURLを出力する。
+   * そのURLをWebブラウザーで開く。
  * 複数CSVを連結するユーティリティ関数を備え、標準入力や複数ファイルを扱える。
  * Puppeteerの起動オプションやページの余白・用紙サイズ・ヘッダー / フッターなど細かいPDF設定に対応。
  * 出力をファイルに保存または標準出力に流すことが可能。
@@ -63,7 +63,7 @@ npm install
 node index.js --help
 ```
 
-## 使い方(基本)
+## 使い方
 
 ```sh
 Usage: index [options] [csvfile...]
@@ -83,8 +83,8 @@ Usage: index [options] [csvfile...]
      * `both`: 対角線上に反転。
      * `none`: 反転なし。
    * `-s, --size <size>`: カードテーブルの横幅・縦幅。寸法名またはカンマ区切りで最大2つの正の実数を指定します。実数の後ろには任意で単位をつけることが可能です。既定の単位は`mm`です。既定値は`297mm,210mm`です。
-   * `-u, --url <url>`: 処理対象のURL。ローカルファイルは`file://`を使用してください。値が絶対URLではない場合、ローカルのファイルパスと解釈され、File URLに変換されます。既定値は暗記カード生成器内の`index.html`のFile URLです。
-   * `--html` / `--no-html`: カード生成時にHTMLの有効 / 無効を切り替え。
+   * `-u, --url <url>`: 処理対象のURL。`http://`, `https://`, `file://`, `data:`などが指定可能です。値が絶対URLではない場合、ローカルのファイルパスと解釈され、File URLに変換されます。既定値は暗記カード生成器内の`index.html`のFile URLです。
+   * `--html` / `--no-html`: CSV内のHTMLの有効 / 無効を切り替え。
  * PDFオプション
    * `-F, --format <format>`: PDFページの横幅・縦幅。寸法名またはカンマ区切りで最大2つの正の実数を指定します。実数の後ろには任意で単位をつけることが可能です。既定の単位は`mm`です。既定値は`297mm,210mm`です。
    * `-M, --margin <margin>`: ページのマージン。カンマ区切りで最大4つの非負実数を指定します。数値の順番はCSSの[`margin`](https://developer.mozilla.org/ja/docs/Web/CSS/margin#%E6%A7%8B%E6%88%90%E8%A6%81%E7%B4%A0%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3)の指定と同じです。実数の後ろには任意で単位をつけることが可能です。既定単位は`mm`です。既定値は`0mm`です。
@@ -112,13 +112,13 @@ Usage: index [options] [csvfile...]
 
 ## CSV
 
-CSVを読み込んで、カードテーブルを生成します。コマンドライン引数では任意の数のCSVファイルを指定できます。CSVファイルの指定がない場合標準入力から読み込みます。読み込んだCSVファイルは連結して処理されます。`-`を指定することで標準入力から読み込みます。
+CSVを読み込んで、カードテーブルを生成します。コマンドライン引数では任意の数のCSVファイルを指定できます。CSVファイルの指定がない場合は標準入力から読み込みます。読み込んだCSVファイルは連結して処理されます。`-`を指定することで標準入力から読み込みます。
 
 CSVの形式については[暗記カード生成のREADME.md](https://github.com/qq542vev/anki-card/blob/master/README.md)を参照してください。
 
 ## 終了ステータス
 
-正常に終了した場合は`0`を、異常終了の場合はエラーメッセージを標準エラー出力するとともに、`0`以外の値を返します。終了ステータスの値は[sysexits](https://man.freebsd.org/cgi/man.cgi?sysexits)に対応しています。
+正常に終了した場合は`0`を、異常終了の場合はエラーメッセージを標準エラー出力に書き出すとともに、`0`以外の値を返します。終了ステータスの値は[sysexits](https://man.freebsd.org/cgi/man.cgi?sysexits)に対応しています。
 
 ## 使用例
 
