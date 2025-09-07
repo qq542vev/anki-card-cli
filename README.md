@@ -59,14 +59,14 @@ npx anki-card --help
 開発用にソースをチェックアウトして使う場合は依存をインストールしてください:
 
 ```sh
-npm install
+npm ci
 node index.js --help
 ```
 
 ## 使い方
 
 ```sh
-Usage: index [options] [csvfile...]
+Usage: anki-card [options] [csvfile...]
 ```
 
 ## CLIオプション
@@ -189,9 +189,9 @@ const { generatePDF, generateHTML, concat } = require('anki-card');
   // CSVファイルを連結
   const csv = await concat(['a.csv', 'b.csv']); // '-'を含めるとstdinを読み込む
   // HTML取得
-  const html = await generateHTML('file:///path/to/index.html#', {/* browserOpts */}, {/* gotoOpts */});
+  const html = await generateHTML('file:///path/to/file.html#', {/* browserOpts */}, {/* gotoOpts */});
   // PDF取得 (Buffer)
-  const pdfBuffer = await generatePDF('file:///path/to/index.html#', {/* browserOpts */}, {/* gotoOpts */}, {/* pdfOptions */});
+  const pdfBuffer = await generatePDF('file:///path/to/file.html#', {/* browserOpts */}, {/* gotoOpts */}, {/* pdfOptions */});
   // Bufferをファイルへ保存
   require('fs').writeFileSync('out.pdf', pdfBuffer);
  })();
