@@ -7,11 +7,11 @@
  * @version 1.0.3
  * @copyright Copyright (C) 2025-2025 qq542vev. All rights reserved.
  * @license AGPL-3.0-only
- * @see {@link https://github.com/qq542vev/anki-card|Project homepage}
- * @see {@link https://github.com/qq542vev/anki-card/issues|Bug report}
+ * @see {@link https://github.com/qq542vev/anki-card-cli|Project homepage}
+ * @see {@link https://github.com/qq542vev/anki-card-cli/issues|Bug report}
  * @dcterms:identifier cdec8c21-864a-42e1-b2be-f4b2c25e93a0
  * @dcterms:created 2025-08-10
- * @dcterms:modified 2025-09-04
+ * @dcterms:modified 2025-09-07
  * @dcterms:conformsTo https://262.ecma-international.org/
  */
 
@@ -335,7 +335,7 @@ function cmd() {
 			})
 			.default(1)
 		)
-		.option('-T, --title <title>', 'PDFファイルのタイトル。')
+		.option('-T, --title <title>', 'PDF / HTMLファイルのタイトル。')
 		.option('--header <template>', 'ヘッダーのテンプレート。', '<div></div>')
 		.option('--footer <template>', 'フッターのテンプレート。', '<div></div>')
 		.optionsGroup('ブラウザーオプション')
@@ -361,9 +361,9 @@ function cmd() {
 			.default('pdf')
 		)
 		.option('-o, --output <output>', '出力ファイル名。', '-')
-		.optionsGroup('動作モードオプション')
+		.optionsGroup('情報オプション')
 		.helpOption('-h, --help', 'ヘルプメッセージを表示して終了する。')
-		.version('1.0.2', '-V, --version', 'バージョン番号を表示して終了する。')
+		.version('1.0.3', '-V, --version', 'バージョン番号を表示して終了する。')
 		.exitOverride((err) => {
 			if(0 < err.exitCode) {
 				process.exit(Exit.USAGE);
