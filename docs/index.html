@@ -107,7 +107,7 @@ See Also:
 </ul>
 </li>
 </ul>
-<p>寸法名はISO AからISO C列などが指定可能です。寸法名の後ろに<code>:L</code>をつけると横向きの寸法となります。</p>
+<p>寸法名はISO AからISO C列などが指定可能です。寸法名の後ろに<code>:L</code>をつけて横向きの寸法も指定可能です。</p>
 <p>単位には<code>mm</code>, <code>cm</code>, <code>m</code>, <code>pc</code>, <code>pt</code>, <code>in</code>, <code>ft</code>, <code>px</code>が指定可能です。</p>
 <h2 id="csv" class="tsd-anchor-link">CSV<a href="#csv" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>CSVを読み込んで、カードテーブルを生成します。コマンドライン引数では任意の数のCSVファイルを指定できます。CSVファイルの指定がない場合は標準入力から読み込みます。読み込んだCSVファイルは連結して処理されます。<code>-</code>を指定することで標準入力から読み込みます。</p>
 <p>CSVの形式については<a href="https://github.com/qq542vev/anki-card/blob/master/README.md">暗記カード生成のREADME.md</a>を参照してください。</p>
@@ -141,7 +141,7 @@ See Also:
 </code><button type="button">Copy</button></pre>
 
 <p>ヘッダー / フッターを付与してPDF出力:</p>
-<pre><code class="sh"><span class="hl-0">npx</span><span class="hl-1"> </span><span class="hl-2">anki-card</span><span class="hl-1"> </span><span class="hl-3">--header</span><span class="hl-1"> </span><span class="hl-2">&#39;&lt;div style=&quot;font-size:10px&quot;&gt;Header&lt;/div&gt;&#39;</span><span class="hl-1"> </span><span class="hl-3">--footer</span><span class="hl-1"> </span><span class="hl-2">&#39;&lt;div style=&quot;font-size:10px&quot;&gt;Page &lt;span class=&quot;pageNumber&quot;&gt;&lt;/span&gt;/&lt;span class=&quot;totalPages&quot;&gt;&lt;/span&gt;&lt;/div&gt;&#39;</span><span class="hl-1"> </span><span class="hl-3">-o</span><span class="hl-1"> </span><span class="hl-2">cards.pdf</span><span class="hl-1"> </span><span class="hl-2">cards.pdf</span>
+<pre><code class="sh"><span class="hl-0">npx</span><span class="hl-1"> </span><span class="hl-2">anki-card</span><span class="hl-1"> </span><span class="hl-3">--header</span><span class="hl-1"> </span><span class="hl-2">&#39;&lt;div style=&quot;font-size:10px&quot;&gt;Header&lt;/div&gt;&#39;</span><span class="hl-1"> </span><span class="hl-3">--footer</span><span class="hl-1"> </span><span class="hl-2">&#39;&lt;div style=&quot;font-size:10px&quot;&gt;Page &lt;span class=&quot;pageNumber&quot;&gt;&lt;/span&gt;/&lt;span class=&quot;totalPages&quot;&gt;&lt;/span&gt;&lt;/div&gt;&#39;</span><span class="hl-1"> </span><span class="hl-3">-o</span><span class="hl-1"> </span><span class="hl-2">cards.pdf</span><span class="hl-1"> </span><span class="hl-2">cards.csv</span>
 </code><button type="button">Copy</button></pre>
 
 <p>Docker/CI環境での利用(サンドボックス回避例):</p>
