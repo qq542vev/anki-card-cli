@@ -106,7 +106,7 @@ Usage: anki-card [options] [csvfile...]
    * `-h, --help`: ヘルプメッセージを出力して終了します。
    * `-V, --version`: バージョン情報を出力して終了します。
 
-寸法名はISO AからISO C列などが指定可能です。寸法名の後ろに`:L`をつけると横向きの寸法となります。
+寸法名はISO AからISO C列などが指定可能です。寸法名の後ろに`:L`をつけて横向きの寸法も指定可能です。
 
 単位には`mm`, `cm`, `m`, `pc`, `pt`, `in`, `ft`, `px`が指定可能です。
 
@@ -169,7 +169,7 @@ npx anki-card -M 10mm,20mm,15mm,20mm -o cards.pdf cards.csv
 ヘッダー / フッターを付与してPDF出力:
 
 ```sh
-npx anki-card --header '<div style="font-size:10px">Header</div>' --footer '<div style="font-size:10px">Page <span class="pageNumber"></span>/<span class="totalPages"></span></div>' -o cards.pdf cards.pdf
+npx anki-card --header '<div style="font-size:10px">Header</div>' --footer '<div style="font-size:10px">Page <span class="pageNumber"></span>/<span class="totalPages"></span></div>' -o cards.pdf cards.csv
 ```
 
 Docker/CI環境での利用(サンドボックス回避例):
