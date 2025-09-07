@@ -90,19 +90,19 @@ Usage: anki-card [options] [csvfile...]
    * `-M, --margin <margin>`: ページのマージン。カンマ区切りで最大4つの非負実数を指定します。数値の順番はCSSの[`margin`](https://developer.mozilla.org/ja/docs/Web/CSS/margin#%E6%A7%8B%E6%88%90%E8%A6%81%E7%B4%A0%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3)の指定と同じです。実数の後ろには任意で単位をつけることが可能です。既定単位は`mm`です。既定値は`0mm`です。
    * `-S, --scale <scale>`: 出力内容の縮尺。2以下の正の実数を指定します。既定値は`1`です。
    * `-T, --title <title>`: PDF / HTMLのタイトル。タイトルを変更したい場合に指定します。
-   * `--header <template>` / `--footer <template>`: ヘッダ / フッタのテンプレート(HTML文字列)。
+   * `--header <template>` / `--footer <template>`: ヘッダ / フッタのテンプレート(HTML文字列)。既定値は`<div></div>`です。
  * ブラウザーオプション
    * `-p, --chrome-path <path>`: Chromium / Google Chromeの実行ファイルパス。既定値はPuppeteerによってインストールされたChromiumのパスです。
    * `-a, --chrome-arg <arg>`: Chromium / Google Chromeのコマンドライン引数(複数回指定可)。
    * `-t, --timeout <msec>`: ブラウザーの起動やページ読み込み等におけるタイムアウト(ミリ秒)。 非負整数を指定します。既定値は`60000`です。
  * 出力オプション
    * `--action <mode>`: 動作モード。次の値が指定可能です。既定値は`pdf`です。
-     * `html`: HTMLを出力します。
-     * `pdf`: PDFを出力します。
      * `url`: 暗記カード生成器のURLを出力します。
      * `browser`: URLをWebブラウザーで開きます。
+     * `html`: HTMLを出力します。
+     * `pdf`: PDFを出力します。
    * `-o, --output <output>`: 出力ファイル名。`-`を指定すると標準出力に書き出します。既定値は`-`です。
- * 動作モードオプション
+ * 情報オプション
    * `-h, --help`: ヘルプメッセージを出力して終了します。
    * `-V, --version`: バージョン情報を出力して終了します。
 
