@@ -1,6 +1,6 @@
 {
   "name": "anki-card-cli",
-  "version": "1.0.3",
+  "version": "1.0.4-dev",
   "main": "index.js",
   "bin": {
     "anki-card": "index.js"

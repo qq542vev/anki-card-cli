@@ -3,8 +3,8 @@
 /**
  * @file CSVから暗記カード用のPDFを生成するプログラム。
  * @module anki-card
- * @author {@link https://purl.org/meta/me/|qq542vev}
- * @version 1.0.3
+ * @author qq542vev
+ * @version 1.0.4-dev
  * @copyright Copyright (C) 2025-2025 qq542vev. All rights reserved.
  * @license AGPL-3.0-only
  * @see {@link https://github.com/qq542vev/anki-card-cli|Project homepage}
@@ -23,7 +23,6 @@ const { readFile, writeFile } = require('fs/promises');
 const cl = require('convert-length');
 const { Command, Argument, Option, InvalidArgumentError } = require('commander');
 const { URL, pathToFileURL } = require('url');
-const path = require('path');
 const Exit = require('sysexits');
 const { text } = require('stream/consumers');
 
