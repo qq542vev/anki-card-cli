@@ -11,7 +11,7 @@
  * @see {@link https://github.com/qq542vev/anki-card-cli/issues|Bug report}
  * @dcterms:identifier cdec8c21-864a-42e1-b2be-f4b2c25e93a0
  * @dcterms:created 2025-08-10
- * @dcterms:modified 2025-09-07
+ * @dcterms:modified 2025-09-18
  * @dcterms:conformsTo https://262.ecma-international.org/
  */
 
@@ -298,8 +298,8 @@ function cmd() {
 			})
 			.default(pathToFileURL(require.resolve("anki-card/index.html")) + '#')
 		)
-		.option('--html', 'カード生成時のHTMLは有効。')
-		.option('--no-html', 'カード生成時のHTMLは無効。')
+		.option('--html', 'カード生成時のHTMLを有効。')
+		.option('--no-html', 'カード生成時のHTMLを無効。')
 		.optionsGroup('PDFオプション')
 		.addOption(
 			new Option('-F, --format <format>', 'ページの寸法名または横幅・縦幅。')
