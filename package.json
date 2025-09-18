@@ -28,7 +28,6 @@
     "anki-card": "^1.1.0",
     "commander": "^14.0.0",
     "convert-length": "^1.0.1",
-    "markdownlint-cli": "^0.44.0",
     "open": "^10.2.0",
     "paper-size": "^1.1.0",
     "puppeteer": "^24.16.0",
@@ -37,6 +36,8 @@
   "devDependencies": {
     "@eslint/js": "^9.31.0",
     "eslint-plugin-jsdoc": "^50.8.0",
+    "markdownlint-cli": "^0.44.0",
+    "speckit": "qq542vev/speckit",
     "typedoc": "^0.28.12"
   }
 }
