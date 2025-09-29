@@ -11,6 +11,7 @@ Metadata:
 	modified - 2025-09-07
 	copyright - Copyright (C) 2025-2025 qq542vev. Some rights reserved.
 	license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
+	conforms-to - <https://spec.commonmark.org/current/>
 
 See Also:
 
@@ -77,7 +78,7 @@ See Also:
 <li><code>-M, --margin &lt;margin&gt;</code>: ページのマージン。カンマ区切りで最大4つの非負実数を指定します。数値の順番はCSSの<a href="https://developer.mozilla.org/ja/docs/Web/CSS/margin#%E6%A7%8B%E6%88%90%E8%A6%81%E7%B4%A0%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3"><code>margin</code></a>の指定と同じです。実数の後ろには任意で単位をつけることが可能です。既定単位は<code>mm</code>です。既定値は<code>0mm</code>です。</li>
 <li><code>-S, --scale &lt;scale&gt;</code>: 出力内容の縮尺。2以下の正の実数を指定します。既定値は<code>1</code>です。</li>
 <li><code>-T, --title &lt;title&gt;</code>: PDF / HTMLのタイトル。タイトルを変更したい場合に指定します。</li>
-<li><code>--header &lt;template&gt;</code> / <code>--footer &lt;template&gt;</code>: ヘッダ / フッタのテンプレート(HTML文字列)。</li>
+<li><code>--header &lt;template&gt;</code> / <code>--footer &lt;template&gt;</code>: ヘッダ / フッタのテンプレート(HTML文字列)。既定値は<code>&lt;div&gt;&lt;/div&gt;</code>です。</li>
 </ul>
 </li>
 <li>ブラウザーオプション
@@ -91,16 +92,16 @@ See Also:
 <ul>
 <li><code>--action &lt;mode&gt;</code>: 動作モード。次の値が指定可能です。既定値は<code>pdf</code>です。
 <ul>
-<li><code>html</code>: HTMLを出力します。</li>
-<li><code>pdf</code>: PDFを出力します。</li>
 <li><code>url</code>: 暗記カード生成器のURLを出力します。</li>
 <li><code>browser</code>: URLをWebブラウザーで開きます。</li>
+<li><code>html</code>: HTMLを出力します。</li>
+<li><code>pdf</code>: PDFを出力します。</li>
 </ul>
 </li>
 <li><code>-o, --output &lt;output&gt;</code>: 出力ファイル名。<code>-</code>を指定すると標準出力に書き出します。既定値は<code>-</code>です。</li>
 </ul>
 </li>
-<li>動作モードオプション
+<li>情報オプション
 <ul>
 <li><code>-h, --help</code>: ヘルプメッセージを出力して終了します。</li>
 <li><code>-V, --version</code>: バージョン情報を出力して終了します。</li>
