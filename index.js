@@ -4,7 +4,7 @@
  * @file CSVから暗記カード用のPDFを生成するプログラム。
  * @module anki-card
  * @author qq542vev ({@link https://purl.org/meta/me/})
- * @version 1.0.5
+ * @version 1.0.4
  * @copyright Copyright (C) 2025-2025 qq542vev. All rights reserved.
  * @license AGPL-3.0-only
  * @see {@link https://github.com/qq542vev/anki-card-cli|Project homepage}
