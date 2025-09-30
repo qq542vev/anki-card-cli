@@ -1,29 +1,29 @@
 {
   "name": "anki-card-cli",
   "version": "1.0.5",
-  "main": "index.js",
-  "bin": {
-    "anki-card": "index.js"
-  },
-  "author": {
-    "name": "qq542vev",
-    "url": "https://purl.org/meta/me/"
-  },
-  "license": "AGPL-3.0-only",
+  "description": "CLI環境でCSVから暗記カードのPDFを生成支援するアプリケーション。",
   "keywords": [
     "flashcards",
     "generator"
   ],
-  "description": "CLI環境でCSVから暗記カードのPDFを生成支援するアプリケーション。",
   "homepage": "https://github.com/qq542vev/anki-card-cli",
   "bug": {
     "url": "https://github.com/qq542vev/anki-card-cli/issues"
+  },
+  "license": "AGPL-3.0-only",
+  "author": {
+    "name": "qq542vev",
+    "url": "https://purl.org/meta/me/"
   },
   "files": [
     "LICENSE.txt",
     "README.md",
     "index.js"
   ],
+  "main": "index.js",
+  "bin": {
+    "anki-card": "index.js"
+  },
   "dependencies": {
     "anki-card": "^1.1.0",
     "commander": "^14.0.0",
