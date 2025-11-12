@@ -6,9 +6,9 @@ Metadata:
 
 	id - 883bde28-39ee-41e1-a590-856098045489
 	author - <qq542vev at https://purl.org/meta/me/>
-	version - 0.1.1
+	version - 0.2.0
 	created - 2020-09-04
-	modified - 2025-09-07
+	modified - 2025-11-11
 	copyright - Copyright (C) 2025-2025 qq542vev. Some rights reserved.
 	license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
 	conforms-to - <https://spec.commonmark.org/current/>
@@ -76,6 +76,7 @@ Usage: anki-card [options] [csvfile...]
 
  * カードテーブルオプション
    * `-b, --border <border>`: テーブルの内側・外側のボーダー幅。カンマ区切りで最大2つの正の実数を指定します。実数の後ろには任意で単位をつけることが可能です。既定の単位は`mm`です。既定値は`0.3mm,0mm`です。
+   * `-c, --css <css>`: カードテーブルに追加適用するCSSを指定します。
    * `-f, --font-size <font-size>`: カードの表面・裏面のフォントサイズ。カンマ区切りで最大2つの正の実数を指定します。実数の後ろには任意で単位をつけることが可能です。既定の単位は`pt`です。既定値は`22pt,18pt`です。
    * `-m, --matrix <matrix>`: カードテーブルの行数・列数。カンマ区切りで最大2つの正の整数を指定します。既定値は`6,4`です。
    * `-r, --rev <rev>`: 裏面ページの反転方向。次の値が指定可能です。既定値は`horizontal`です。
