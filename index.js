@@ -11,7 +11,7 @@
  * @see {@link https://github.com/qq542vev/anki-card-cli/issues|Bug report}
  * @dcterms:identifier cdec8c21-864a-42e1-b2be-f4b2c25e93a0
  * @dcterms:created 2025-08-10
- * @dcterms:modified 2025-11-11
+ * @dcterms:modified 2025-11-12
  * @dcterms:conformsTo https://262.ecma-international.org/
  */
 
@@ -257,7 +257,7 @@ function cmd() {
 			})
 			.default({ inner: 0.3, outer: 0 }, '0.3mm,0mm')
 		)
-		.option('-c, --css <css>', 'カードテーブルへ追加適用するCSS文字列。')
+		.option('-c, --css <css>', 'カードテーブルへ追加適用するCSS文字列。', '')
 		.addOption(
 			new Option('-f, --font-size <font-size>', 'カードの表面・裏面のフォントサイズ。')
 			.argParser((arg) => {
