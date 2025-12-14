@@ -1,0 +1,69 @@
+#!/usr/bin/env sh
+
+### File: build-docker-image
+##
+## anki-card-cli用のDockerイメージを組み立て、レジストリにプッシュする。
+##
+## Usage:
+##
+## ------ Text ------
+## ./build-docker-image
+## ------------------
+##
+## Metadata:
+##
+##   id - ed738f2f-5b4b-4661-849c-60e47e752e3f
+##   author - <qq542vev at https://purl.org/meta/me/>
+##   version - 1.0.0
+##   created - 2025-12-11
+##   modified - 2025-12-15
+##   copyright - Copyright (C) 2025-2025 qq542vev. All rights reserved.
+##   license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
+##
+## See Also:
+##
+##   * <Project homepage at https://github.com/qq542vev/anki-card-cli>
+##   * <Bag report at https://github.com/qq542vev/anki-card-cli/issues>
+
+set -efu
+
+alias jq='jq -r <package.json'
+
+f() {
+	printf 'org.opencontainers.image.%s=%s' "${1}" "${2}"
+}
+
+authors="$(jq '.author | "\(.name) <\(.url)>"')"
+url="$(jq .homepage)"
+version="$(jq .version)"
+license="$(jq .license)"
+title="$(jq .name)"
+description="$(jq .description)"
+
+corefonts='fonts-noto-cjk fonts-noto-color-emoji fonts-noto-core fonts-noto-mono'
+allfonts="${corefonts} fonts-noto-cjk-extra fonts-noto-extra"
+
+for variant in nofonts corefonts allfonts; do
+	eval "fonts=\${${variant}-}"
+	created="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+
+	docker buildx build \
+	--build-arg INSTALL_FONTS="${fonts}" --push \
+	-t "ghcr.io/qq542vev/${title}:${version}-${variant}" \
+	-t "registry.gitlab.com/qq542vev/${title}:${version}-${variant}" \
+	--platform 'linux/amd64,linux/arm64/v8,linux/ppc64le' \
+	--label "$(f created "${created}")" \
+	--label "$(f authors "${authors}")" \
+	--label "$(f url "${url}")" \
+	--label "$(f version "${version}-${variant}")" \
+	--label "$(f license "${license}")" \
+	--label "$(f title "${title}")" \
+	--label "$(f description "${description}")" \
+	--annotation "$(f created "${created}")" \
+	--annotation "$(f authors "${authors}")" \
+	--annotation "$(f url "${url}")" \
+	--annotation "$(f version "${version}-${variant}")" \
+	--annotation "$(f license "${license}")" \
+	--annotation "$(f title "${title}")" \
+	--annotation "$(f description "${description}")" .
+done
