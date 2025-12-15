@@ -6,9 +6,9 @@ Metadata:
 
 	id - 883bde28-39ee-41e1-a590-856098045489
 	author - <qq542vev at https://purl.org/meta/me/>
-	version - 0.2.0
+	version - 0.3.0
 	created - 2020-09-04
-	modified - 2025-11-12
+	modified - 2025-11-16
 	copyright - Copyright (C) 2025-2025 qq542vev. Some rights reserved.
 	license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
 	conforms-to - <https://spec.commonmark.org/current/>
@@ -202,6 +202,16 @@ const { generatePDF, generateHTML, concat } = require('anki-card');
 `generatePDF`はPuppeteerを用いてブラウザーを起動し、結果をBufferで返します。`generateHTML`はページコンテンツを文字列で返します。
 
 詳細な仕様は[ドキュメント](https://qq542vev.github.io/anki-card-cli/modules.html)を参照してください。
+
+## Dockerイメージ
+
+Dockerを通して使用することも可能です。`nofonts`, `corefonts`, `allfonts`の3つの変種があります。`nofonts`はイメージにフォントがインストールされていないため、イメージサイズは最小なもののAscii以外の文字は表示不可です。`corefonts`は基本的文字を表示するためのフォントがインストールされています。`allfonts`は殆ど全ての文字を表示するためのフォントがインストールされています。
+
+```
+docker run -i --rm ghcr.io/qq542vev/anki-card-cli:latest-corefonts <cards.csv >cards.pdf
+```
+
+インプット・アウトプットでファイル名を直接指定するのではなく、標準入力・標準出力を使用するのがお勧めです。
 
 ## トラブルシューティング
 
