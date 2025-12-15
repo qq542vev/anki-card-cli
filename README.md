@@ -205,7 +205,7 @@ const { generatePDF, generateHTML, concat } = require('anki-card');
 
 ## Dockerイメージ
 
-Dockerを通して使用することも可能です。`nofonts`, `corefonts`, `allfonts`の3つの変種があります。`nofonts`はイメージにフォントがインストールされていないため、イメージサイズは最小なもののAscii以外の文字は表示不可です。`corefonts`は基本的文字を表示するためのフォントがインストールされています。`allfonts`は殆ど全ての文字を表示するためのフォントがインストールされています。
+Dockerを通して使用することも可能です。`nofonts`, `corefonts`, `allfonts`の3つの変種があります。`nofonts`はイメージにフォントがインストールされていないため、イメージサイズは最小なものの、Ascii以外の文字は表示不可です。`corefonts`は基本的な文字を表示するためのフォントがインストールされています。`allfonts`は殆ど全ての文字を表示するためのフォントがインストールされています。
 
 ```
 docker run -i --rm ghcr.io/qq542vev/anki-card-cli:latest-corefonts <cards.csv >cards.pdf
