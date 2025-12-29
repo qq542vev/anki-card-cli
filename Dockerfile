@@ -49,7 +49,6 @@ LABEL org.opencontainers.image.base.name="${BASE_IMAGE}"
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium"
 
-
 RUN \
 	apt-get update && \
 	apt-get install -y --no-install-recommends chromium
@@ -61,6 +60,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ARG WORKDIR="/root/anki-card-cli"
 WORKDIR "${WORKDIR}"
-COPY --from=npm /app "${WORKDIR}" 
+COPY --from=npm /app "${WORKDIR}"
 
 ENTRYPOINT ["node", "index.js", "--chrome-arg", "--no-sandbox", "--chrome-arg", "--disable-setuid-sandbox"]
