@@ -39,12 +39,12 @@ version="$(jq .version)"
 license="$(jq .license)"
 title="$(jq .name)"
 description="$(jq .description)"
-
+nofonts=''
 corefonts='fonts-noto-cjk fonts-noto-color-emoji fonts-noto-core fonts-noto-mono'
 allfonts="${corefonts} fonts-noto-cjk-extra fonts-noto-extra"
 
 for variant in nofonts corefonts allfonts; do
-	eval "fonts=\${${variant}-}"
+	eval "fonts=\${${variant}}"
 	created="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
 
 	docker buildx build \
