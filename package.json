@@ -24,6 +24,9 @@
   "bin": {
     "anki-card": "index.js"
   },
+  "scripts": {
+    "bake": "jq() { command jq -r \"${@}\" package.json; }; IMG_AUTHS=\"$(jq '.author | \"\\(.name) <\\(.url)>\"')\" IMG_URL=\"$(jq .homepage)\" IMG_VER=\"$(jq .version)\" IMG_LICENSE=\"$(jq .license)\" IMG_TITLE=\"$(jq .name)\" IMG_DESC=\"$(jq .description)\" docker buildx bake --progress plain"
+  },
   "dependencies": {
     "anki-card": "^1.1.0",
     "commander": "^14.0.0",

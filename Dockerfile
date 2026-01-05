@@ -10,8 +10,8 @@
 ##
 ## Build arg:
 ##
-##   BASE_IMAGE - ベースとするイメージ名。
-##   INSTALL_FONTS - インストールするフォント。
+##   BASE - ベースとするイメージ名。
+##   FONTS - インストールするフォント。
 ##
 ## Metadata:
 ##
@@ -19,7 +19,7 @@
 ##   author - <qq542vev at https://purl.org/meta/me/>
 ##   version - 1.0.0
 ##   created - 2025-12-11
-##   modified - 2025-12-11
+##   modified - 2026-01-06
 ##   copyright - Copyright (C) 2025-2025 qq542vev. All rights reserved.
 ##   license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
 ##
@@ -28,9 +28,9 @@
 ##   * <Project homepage at https://github.com/qq542vev/anki-card-cli>
 ##   * <Bag report at https://github.com/qq542vev/anki-card-cli/issues>
 
-ARG BASE_IMAGE="docker.io/library/node:24-trixie-slim"
+ARG BASE="docker.io/library/node:24-trixie-slim"
 
-FROM ${BASE_IMAGE} AS npm
+FROM ${BASE} AS npm
 
 WORKDIR /app
 
@@ -40,11 +40,11 @@ COPY index.js package.json package-lock.json .
 
 RUN npm ci --production
 
-FROM ${BASE_IMAGE}
+FROM ${BASE}
 
-ARG BASE_IMAGE
+ARG BASE
 
-LABEL org.opencontainers.image.base.name="${BASE_IMAGE}"
+LABEL org.opencontainers.image.base.name="${BASE}"
 
 ENV DEBIAN_FRONTEND="noninteractive"
 ENV PUPPETEER_EXECUTABLE_PATH="/usr/bin/chromium"
@@ -53,8 +53,8 @@ RUN \
 	apt-get update && \
 	apt-get install -y --no-install-recommends chromium
 
-ARG INSTALL_FONTS=""
-RUN case "${INSTALL_FONTS}" in ?*) apt-get install -y --no-install-recommends ${INSTALL_FONTS} && fc-cache -fv;; esac
+ARG FONTS=""
+RUN case "${FONTS}" in ?*) apt-get install -y --no-install-recommends ${FONTS} && fc-cache -fv;; esac
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
