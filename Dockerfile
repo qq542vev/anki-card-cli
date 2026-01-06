@@ -22,6 +22,7 @@
 ##   modified - 2026-01-06
 ##   copyright - Copyright (C) 2025-2025 qq542vev. All rights reserved.
 ##   license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
+##   conforms-to - <https://docs.docker.com/reference/dockerfile/>
 ##
 ## See Also:
 ##

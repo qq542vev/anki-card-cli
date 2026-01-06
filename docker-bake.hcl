@@ -27,6 +27,7 @@
 ##   modified - 2026-01-05
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
 ##   license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
+##   conforms-to - <https://docs.docker.com/build/bake/reference/>
 ##
 ## See Also:
 ##
