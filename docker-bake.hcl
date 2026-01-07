@@ -24,7 +24,7 @@
 ##   author - <qq542vev at https://purl.org/meta/me/>
 ##   version - 1.0.0
 ##   created - 2026-01-05
-##   modified - 2026-01-05
+##   modified - 2026-01-06
 ##   copyright - Copyright (C) 2026-2026 qq542vev. All rights reserved.
 ##   license - <AGPL-3.0-only at https://www.gnu.org/licenses/agpl-3.0.txt>
 ##   conforms-to - <https://docs.docker.com/build/bake/reference/>
@@ -59,36 +59,32 @@ variable "tags" {
   ]
 }
 
-group "default" {
-  targets = ["nofonts", "corefonts", "allfonts"]
-}
-
-target "common" {
+target "default" {
   context = "."
   dockerfile = "Dockerfile"
   platforms = ["linux/amd64", "linux/arm64/v8", "linux/ppc64le"]
   labels = labels
   annotations = formatlist("%s=%s", keys(labels), values(labels))
   output = ["type=registry"]
-}
-
-target "nofonts" {
-  inherits = ["common"]
-  tags = formatlist("%s-%s", tags, "nofonts")
-}
-
-target "corefonts" {
-  inherits = ["common"]
-  args = {
-    FONTS = "fonts-noto-cjk fonts-noto-color-emoji fonts-noto-core fonts-noto-mono"
+  matrix = {
+    variant = [
+      {
+        name = "nofonts"
+        fonts = ""
+      },
+      {
+        name = "corefonts"
+        fonts = "fonts-noto-cjk fonts-noto-color-emoji fonts-noto-core fonts-noto-mono"
+      },
+      {
+        name = "allfonts"
+        fonts = "fonts-noto-cjk fonts-noto-color-emoji fonts-noto-core fonts-noto-mono fonts-noto-cjk-extra fonts-noto-extra"
+      }
+    ]
   }
-  tags = formatlist("%s-%s", tags, "corefonts")
-}
-
-target "allfonts" {
-  inherits = ["common"]
   args = {
-    FONTS = "fonts-noto-cjk fonts-noto-color-emoji fonts-noto-core fonts-noto-mono fonts-noto-cjk-extra fonts-noto-extra"
+    FONTS = variant.fonts
   }
-  tags = formatlist("%s-%s", tags, "allfonts")
+  name = variant.name
+  tags = formatlist("%s-%s", tags, variant.name)
 }
